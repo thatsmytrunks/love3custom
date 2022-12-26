@@ -213,6 +213,100 @@ if con=3	//wait again, then restart the steps.
 ```
 
 
+### obj_cdanmaku
+obj_cdanmaku is an object for LOVE Custom that creates a spray of objects, similar to a bullet hell game.
+
+#### • obj_cmover Variables
+
+- **range**: by default these will create in a full circle
+- **count**: how many bullets to make
+- **timer**: incrementing time variable
+- **targ**: how frequently to create a bullet
+- **rotspeed**: how much the angle will increment per frame
+- **bulangle**: the start angle of the bullets
+- **bulobj**: what object to create
+- **bulsprite**: what sprite for the bullet to use. Has to be a built in sprite. Sorry.
+- **bulspeed**: how fast the bullets will generate
+- **startdist**: how far from the x/y to generate the bullet
+- **mapanim**: whether or not to map the sprite animation to the progress of the bullets
+- **mapangle**: whether or not to map the angle of the sprite to the bullet angle
+
+#### • Example
+```json
+            {
+                "type" : "obj_cdanmaku",
+                "x" : 492,
+                "y" : 82,
+                "count": 4,
+                "rotspeed" : 2,
+                "targ" : 2,
+                "bulspeed" : 2
+            },
+```
+
+The result:<br><img src="images/cdanmakuExample.gif">
+
+
+#### • GML
+Create:
+```gml
+range=360					//by default these will create in a full circle
+count=6						//how many bullets to make
+timer=0						//incrementing time variable
+targ=10						//how frequently to create a bullet
+rotspeed=1					//how much the angle will increment per frame
+bulangle=0					//the start angle of the bullets
+bulobj="obj_bullet"			//what object to create
+bulsprite="spr_bullet"		//what sprite for the bullet to use
+bulspeed=1					//how fast the bullets will generate
+startdist=5					//how far from the x/y to generate the bullet
+mapanim=0					//whether or not to map the sprite animation to the progress of the bullets
+mapangle=0					//whether or not to map the angle of the sprite to the bullet angle
+init=0						//initialization variable
+```
+
+Step:
+```gml
+if init=0	//initialization only happens once per object
+{
+	if sprite_exists(asset_get_index(bulsprite))
+		bulsprite=asset_get_index(bulsprite)		//find the bullet sprite and assign it
+	else	instance_destroy()						//if it doesn't exist, destroy this obj so the game doesn't crash
+	
+	if object_exists(asset_get_index(bulobj))		//find the bullet object and assign it
+		bulobj=asset_get_index(bulobj)
+	else	instance_destroy()						//if it doesn't exist, destroy this obj so the game doesn't crash
+	init=1
+}
+
+
+if mapanim	//if mapanim is true, the sprite will map its animation to the progress of timer divided by targ. Otherwise, use image_speed
+&& sprite_exists(sprite_index)
+{
+	image_index=lerp(0,sprite_get_number(sprite_index),timer/targ)
+}
+
+bulangle+=rotspeed
+
+if mapangle 
+&& sprite_exists(sprite_index)
+	image_angle=bulangle
+
+timer++
+if timer=targ
+{
+	for (var i = 0; i < count; ++i) 
+	{
+	    var bul=instance_create(x+round(lengthdir_x(startdist,bulangle+(range/count)*i)),y+round(lengthdir_y(startdist,bulangle+(range/count)*i)),bulobj)
+		
+		bul.sprite_index=bulsprite
+		bul.direction=bulangle+(range/count)*i
+		bul.speed=bulspeed
+	}
+	timer=0
+}
+```
+
 
 ## Full List of Objects
 
