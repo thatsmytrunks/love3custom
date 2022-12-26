@@ -15,6 +15,7 @@ If you're looking to upload or download custom levels, you can find them hosted 
 - [Object Sets](objectsets.md)
 - [Object Variables](objectvariables.md)
 - [Sprite Variables](spriteimport.md)
+- [Full Sprite / Object Lists](lists.md)
 
 ## The Basics
 
