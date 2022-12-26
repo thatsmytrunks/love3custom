@@ -12,6 +12,7 @@ If you're looking to upload or download custom levels, you can find them hosted 
 - [config.json](configjson.md)
 - [Editor Mode](editormode.md)
 - [Object List](objectlist.md)
+- [Object Sets](objectsets.md)
 - [Object Variables](objectvariables.md)
 - [Sprite Variables](spriteimport.md)
 
