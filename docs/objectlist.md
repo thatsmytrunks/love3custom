@@ -8,8 +8,131 @@
 - **p_slow**: When the player is touching p_slow their vertical speed (vsp) will be set to whatever p_slow's variable "slow" is.
 - **p_solid**: The solid object parent. Used for creating level geometry.
 - **p_water**: When the player is within a p_water region, they can jump infinitely.
+- **obj_teleporter**: When the player interacts with an obj_teleporter they will be warped to the object's `targX` and `targY` variables.
 
 ## Special Objects for Custom Mode
+
+### obj_ckey
+obj_ckey is an object with only one variable, `extflag` which takes a string. Once the player interacts with the object, it will set all objects that are interactable (`p_interact_solid` / `p_interact_death` / `p_interact_bounce` and their children) to `triggered=1`.
+
+### obj_cswitch
+Similar to `obj_ckey`, this takes an `extflag` and triggers all interactable objects with the same extflag. It has an additional variable, `trigonce`, which can be set to 0 or 1. If set to one, the switch can only be pressed once and will stay pressed.
+
+### obj_cdoor
+This is a solid object that when triggered, will either explode, shrink horizontally, or shrink vertically. It is triggered by `obj_ckey` and `obj_cswitch` objects with the same `extflag`.
+
+#### • obj_cdoor variables
+**extflag**: "default" by default. Set this to a different string in quotations to give it a different trigger variable.
+**type**: What happens when triggered.	0: explode | 1: shrink vertically | 2: shrink horizontally
+**wait**: how long to wait (in frames) before exploding/shrinking
+
+#### • GML
+Create:
+```gml
+extflag="default"
+type=2	//0: explode | 1:shrink vertically | 2:shrink horizontally
+con=0
+timer=0
+wait=5
+triggered=0
+```
+Step:
+```gml
+if con=0 && triggered
+{
+	con=1
+}
+
+if con=1
+{
+	timer++
+	if timer>=wait
+	{
+		if type=0	//explode
+		{
+			if wait>0
+				snd_play(snd.bigland)
+				
+			with obj_player shake=2
+			scr_obliterate(c_yellow)
+		}
+		if type=1	//shrink vertically
+		{
+			if wait>0
+				snd_play(snd.bigland)
+			con=2
+		}
+		if type=2	//shrink horizontally
+		{
+			if wait>0
+				snd_play(snd.bigland)
+			con=10
+		}
+	}
+}
+if con=2
+{
+	image_yscale*=.9
+	if image_yscale<=.01
+	|| sprite_height<1
+		instance_destroy()
+}
+if con=10
+{
+	image_xscale*=.9
+	if image_xscale<=.01
+	|| sprite_width<1
+		instance_destroy()
+}
+```
+
+### obj_ccreator
+obj_ccreator is an interactable style object that when triggered will create an object with the variables that have been provided to it at the x/y value where obj_ccreator was made
+
+#### • GML
+Create:
+```gml
+triggered=false
+myobj=0
+
+timer=0			//a variable that increments by one every frame
+targ=30			//how long it takes for the object to move from one location to the next (in frames)
+wait=5			//how long the object should wait before moving again
+con=0			//used as a state varaible.
+init=0			//used to initiate the object
+myobj=0			//a reserved variable for referring to the created object
+cobj="obj_bouncer_indidivual"	//what kind of object to create
+cspr="spr_bouncer_individual"	//what sprite to use (must not be a custom sprite)
+extflag="default"	//the trigger variable for this object
+extflag2="default"	//the trigger variable for the created object
+visible=false		//make this invisible since it's just a controller object
+```
+
+Step:
+```gml
+if init=0 && triggered
+{
+	//check to see if the cspr sprite that was defined exists. If not, self destruct to avoid a crash
+	if sprite_exists(asset_get_index(cspr))	cspr=asset_get_index(cspr)
+	else instance_destroy()
+	
+	//check to see if the cobj object that was defined exists. If not, self destruct to avoid a crash
+	if object_exists(asset_get_index(cobj))	cobj=asset_get_index(cobj)
+	else instance_destroy()
+	
+	myobj=instance_create(x,y,cobj)	//create the cobj, and assign myobj to this.
+	myobj.sprite_index=cspr			//give the cobj the cspr
+	myobj.image_index=image_index	//set myobj's frame
+	myobj.image_speed=image_speed	//set myobj's image speed
+	myobj.image_xscale=image_xscale	//set myobj's xscale
+	myobj.image_yscale=image_yscale	//set myobj's yscale
+	myobj.image_angle=image_angle	//set myobj's angle
+	myobj.visible=true				//make sure myobj is set to visible
+	myobj.extflag=extflag2			//give myobj the extflag we had as extflag2
+	init=1							//finish initalizing
+	instance_destroy()
+}
+```
 
 ### obj_cturret
 obj_cturret is an object that creates other objects after a certain number of frames. While it's designed specifically to create bullets that shoot in a direction, it could be used to create other objects.
@@ -25,6 +148,7 @@ obj_cturret is an object that creates other objects after a certain number of fr
 - **bulobj**: what object to create. default is obj_bullet.
 
 #### • Example
+
 ```json
 	{
 		"type": "obj_cturret",				←define the object
@@ -42,6 +166,7 @@ The result:<br><img src="images/cturretExample.gif">
 
 #### • GML
 - Create
+
 ```gml
 timer=0	//a value that raises by one every frame.
 targ=30	//the value that timer has to reach before creating the bullet object
