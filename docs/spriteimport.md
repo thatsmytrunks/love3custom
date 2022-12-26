@@ -1,3 +1,4 @@
+[Return to Home](README.md)
 # Sprite Variables
 
 You can set up your own sprites in your levels' config.json, and it requires a few variables. Most of the time you can just leave everything the way that it is, changing the path and frames, but if you want to know a little more about what everything means, here's some information.

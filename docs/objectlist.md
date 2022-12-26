@@ -9,6 +9,210 @@
 - **p_solid**: The solid object parent. Used for creating level geometry.
 - **p_water**: When the player is within a p_water region, they can jump infinitely.
 
+## Special Objects for Custom Mode
+
+### obj_cturret
+obj_cturret is an object that creates other objects after a certain number of frames. While it's designed specifically to create bullets that shoot in a direction, it could be used to create other objects.
+
+#### • obj_cturret Variables
+- **timer**: a timer that increments 1 every frame. You can set this to another number (less than target) to adjust its start time.
+- **targ**: the time that `timer` needs to reach to create the object
+- **xoff**: used to set the relative xoffset variable at which the instance is created
+- **yoff**: used to set the relative yoffset variable at which the instance is created
+- **bulsprite**: the sprite that the bullet will be given. default is spr_bullet. This sadly HAS to be an in-game sprite, not a custom one.
+- **bulspeed**: the speed which the bullet will travel
+- **mapanim**: whether or not to map the animation of the turret to the progress of the firing rate
+- **bulobj**: what object to create. default is obj_bullet.
+
+#### • Example
+```json
+	{
+		"type": "obj_cturret",				←define the object
+		"sprite_index": "spr_lv14_shootUp",	←define the sprite (can be custom)
+		"image_angle": 180,					←define the direction of the object
+		"targ": 20,							←define how often it shoots (once per 20 frames)
+		"bulsprite": "spr_3x3Bullet",		←define the sprite of the bullet (cannot be custom)
+		"x" : 44,							←define the x location of the turret
+		"y" : 39,							←define the y location of the turret
+		"xoff" : 0;							←this sprite does not require an x offset, but this is where it'd go
+		"yoff" : 0							←this sprite does not require a y offset, but this is where it'd go
+	},
+```
+The result:<br><img src="images/cturretExample.gif">
+
+#### • GML
+- Create
+```gml
+timer=0	//a value that raises by one every frame.
+targ=30	//the value that timer has to reach before creating the bullet object
+xoff=0	//a relative xoffset for where the bullet is created
+yoff=0	//a relative yoffset for where the bullet is created
+bulspeed=1		//the speed of the bullet
+mapanim=true	//whether or not to map the sprite animation to the progress of timer to targ
+bulsprite="spr_bullet"	//the sprite of the bullet, initialized as a string because it will search for the asset
+bulobj="obj_bullet"		//the object that the turret will create when timer reaches targ
+init=0					//used for an initialization step to let Game Maker catch up on the first frame.
+
+- Step
+```gml
+if init=0	//initialization only happens once per object
+{
+	if sprite_exists(asset_get_index(bulsprite))
+		bulsprite=asset_get_index(bulsprite)		//find the bullet sprite and assign it
+	else	instance_destroy()						//if it doesn't exist, destroy this obj so the game doesn't crash
+	
+	if object_exists(asset_get_index(bulobj))		//find the bullet object and assign it
+		bulobj=asset_get_index(bulobj)
+	else	instance_destroy()						//if it doesn't exist, destroy this obj so the game doesn't crash
+	init=1
+}
+timer++	//increment the timer variable one every frame
+if mapanim	//if mapanim is true, the sprite will map its animation to the progress of timer divided by targ. Otherwise, use image_speed
+{
+	image_index=lerp(0,sprite_get_number(sprite_index),timer/targ)
+}
+if timer>=targ	//once timer has reached the target time, create the bullet
+{
+	timer=0	//reset the timer so we can repeat this
+	var bul=instance_create(x+lengthdir_x(round(sprite_width/2),image_angle)+xoff,y+lengthdir_y(round(sprite_height/2),image_angle)+yoff,bulobj)	//create the bullet instance at the x/y offset.
+	bul.image_xscale=1
+	bul.image_yscale=1
+	bul.direction=image_angle+90	//set the direction of the bullet
+	bul.speed=bulspeed				//set the speed of the bullet
+	bul.sprite_index=bulsprite		//set the sprite of the bullet
+}
+```
+
+### obj_cmover
+obj_cmover is an object for LOVE Custom that creates an object with custom variables, sets two pairs of x/y coordinates, and them moves between them over time. Sadly this cannot use a custom sprite due to inheritance. I bet someone can do this smarter than me so please feel free to [tweet at me](https://twitter.com/thatsmytrunks) or something.
+
+#### • obj_cmover Variables
+- **timer**: a timer that increments 1 every frame. You can set this to another number (less than target) to adjust its start time.
+- **targ**: the time that `timer` needs to move from one point to the next
+- **locx1**: the starting x location of the object. Set to X by default, so not needed unless you want it for some weird reason.
+- **locy1**: the starting y location of the object. Set to Y by default, so not needed unless you want it for some weird reason.
+- **locx2**: the target x location of the object's destination.
+- **locy2**: the target y location of the object's destination.
+- **cobj**: the object index of the object we'll be creating.
+- **cspr**: the sprite index of the object we'll be creating. This cannot be a custom sprite. Sorry.
+
+#### • Example
+```json
+			{
+				"type" : "obj_cmover",
+				"x" : 66,
+				"y" : 45,
+				"locx2" : 119,
+				"locy2" : 45,
+				"targ"	: 53,
+				"image_speed" : 1,
+				"cobj" : "p_death",
+				"cspr" : "spr_lv20_smasher"
+			},
+```
+
+The result:<br><img src="images/cmoverExample.gif">
+
+
+#### • GML
+Create:
+```gml
+locx1=x			//the first location's x. set to xstart by default
+locy1=y			//the first location's y. set to xstart by default
+locx2=x+20		//the second location's x
+locy2=y+20		//the second location's y
+timer=0			//a variable that increments by one every frame
+targ=30			//how long it takes for the object to move from one location to the next (in frames)
+wait=5			//how long the object should wait before moving again
+con=0			//used as a state varaible.
+init=0			//used to initiate the object
+myobj=0			//a reserved variable for referring to the created object
+cobj="obj_bouncer_indidivual"	//what kind of object to create
+cspr="spr_bouncer_individual"	//what sprite to use (must not be a custom sprite)
+visible=false					//make this invisible since it's just a controller object
+```
+
+Step:
+```gml
+if init=0
+{
+	//check to see if the cspr sprite that was defined exists. If not, self destruct to avoid a crash
+	if sprite_exists(asset_get_index(cspr))	cspr=asset_get_index(cspr)
+	else instance_destroy()
+	
+	//check to see if the cobj object that was defined exists. If not, self destruct to avoid a crash
+	if object_exists(asset_get_index(cobj))	cobj=asset_get_index(cobj)
+	else instance_destroy()
+	
+	sprite_index=cspr	//this is redundant but I set the sprite index here
+	myobj=instance_create(x,y,cobj)	//create the cobj, and assign myobj to this.
+	myobj.sprite_index=sprite_index	//give the controller object's sprite to myobj
+	myobj.image_index=image_index	//set myobj's frame
+	myobj.image_speed=image_speed	//set myobj's image speed
+	myobj.image_xscale=image_xscale	//set myobj's xscale
+	myobj.image_yscale=image_yscale	//set myobj's yscale
+	myobj.image_angle=image_angle	//set myobj's angle
+	myobj.visible=true				//make sure myobj is set to visible
+	init=1							//finish initalizing
+}
+
+if !i_ex(myobj) instance_destroy()	//if for some reason myobj is destroyed, self destruct this controller
+
+
+if con=0
+{
+	timer++
+	
+	myobj.x=round(lerp(locx1,locx2,timer/targ))	//set the x based on timer/targ
+	myobj.y=round(lerp(locy1,locy2,timer/targ))	//set the y based on timer/targ
+	
+	if timer>=targ
+	{
+		myobj.x=locx2	//just in case someone does something funky, put it where it's supposed to go
+		myobj.y=locy2
+		timer=0			//reset the timer
+		con=1			//move to the next step
+	}
+}
+
+if con=1
+{
+	timer++
+	if timer>=wait	//here we just wait until the timer meets wait
+	{
+		timer=0
+		con=2
+	}
+}
+
+if con=2	//same as before, but in reverse
+{
+	timer++
+	
+	myobj.x=round(lerp(locx2,locx1,timer/targ))
+	myobj.y=round(lerp(locy2,locy1,timer/targ))
+	
+	if timer>=targ
+	{
+		myobj.x=locx1
+		myobj.y=locy1
+		timer=0
+		con=3
+	}
+}
+
+if con=3	//wait again, then restart the steps.
+{
+	timer++
+	if timer>=wait
+	{
+		timer=0
+		con=0
+	}
+}
+```
+
+
 
 ## Full List of Objects
 
