@@ -3,7 +3,7 @@
 # Every Sprite in the Game
 This is an incredibly stupid way of doing this, but it was the quickest way. On the following six pages, each with 2030+ images, you can see every frame of every sprite in the game. There's no particularly good way to use this list, but here's how the files are named.
 ___
-![spr_lv23_activated_14.png](images/everysprite/spr_lv23_activated_14.png)<br>spr_lv23_activated_14.png<br>
+![spr_lv23_activated_14.png](images/everySprite/spr_lv23_activated_14.png)<br>spr_lv23_activated_14.png<br>
 ___
 `spr_lv23_activated_14.png`
 
