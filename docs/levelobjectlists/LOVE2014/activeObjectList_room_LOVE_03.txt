@@ -1,0 +1,36 @@
+[room]
+name="LOVE (2014)#Level 03"
+room_name="room_LOVE_03"
+room_width="320"
+room_height="240"
+[[ OBJECT: ref 100034]]
+"type"="obj_player,"
+"sprite_index"="spr_player_idle,"
+"x" ="4,"
+"y" ="235,"
+"depth" ="-100,"
+[[ OBJECT: ref 100035]]
+"type"="obj_goal,"
+"sprite_index"="spr_goal,"
+"x" ="319,"
+"y" ="220,"
+"depth" ="-100,"
+"visible" ="0,"
+[[ OBJECT: ref 100036]]
+"type"="obj_classic_secretToken,"
+"sprite_index"="spr_doorkey_idle,"
+"x" ="114,"
+"y" ="155,"
+"depth" ="-100,"
+[[ OBJECT: ref 100037]]
+"type"="lv03_solid_obj,"
+"sprite_index"="lv03_solid_spr,"
+"x" ="0,"
+"y" ="0,"
+"depth" ="0,"
+[[ OBJECT: ref 100038]]
+"type"="lv03_death_obj,"
+"sprite_index"="lv03_death_spr,"
+"x" ="0,"
+"y" ="0,"
+"depth" ="0,"

@@ -1,0 +1,36 @@
+[room]
+name="<3#Level 20: Potentiality to Actuality"
+room_name="room_love2007_20"
+room_width="1024"
+room_height="136"
+[[ OBJECT: ref 104855]]
+"type"="obj_2007_lv20_finale,"
+"sprite_index"="spr_2007_lv20_solid,"
+"x" ="0,"
+"y" ="4,"
+"depth" ="10,"
+[[ OBJECT: ref 104856]]
+"type"="obj_blackOverlay,"
+"sprite_index"="spr_px2_black,"
+"x" ="-38,"
+"y" ="132,"
+"depth" ="-999,"
+[[ OBJECT: ref 104857]]
+"type"="obj_blackOverlay,"
+"sprite_index"="spr_px2_black,"
+"x" ="-76,"
+"y" ="-9,"
+"depth" ="-999,"
+[[ OBJECT: ref 104858]]
+"type"="obj_player,"
+"sprite_index"="spr_player_idle,"
+"x" ="1021,"
+"y" ="23,"
+"depth" ="0,"
+[[ OBJECT: ref 104859]]
+"type"="obj_death_invisible,"
+"sprite_index"="spr_placeholderDeath,"
+"x" ="884,"
+"y" ="132,"
+"depth" ="-999,"
+"visible" ="0,"

@@ -1,0 +1,37 @@
+[room]
+name="LOVE Remastered#Level 03"
+room_name="room_love_03_play"
+room_width="360"
+room_height="308"
+[[ OBJECT: ref 100387]]
+"type"="obj_player,"
+"sprite_index"="spr_player_idle,"
+"x" ="4,"
+"y" ="300,"
+"depth" ="-1000,"
+[[ OBJECT: ref 100388]]
+"type"="obj_goal,"
+"sprite_index"="spr_goal,"
+"x" ="359,"
+"y" ="286,"
+"depth" ="-1000,"
+"visible" ="0,"
+[[ OBJECT: ref 100389]]
+"type"="obj_classic_secretToken,"
+"sprite_index"="spr_doorkey_idle,"
+"x" ="107,"
+"y" ="197,"
+"depth" ="-1000,"
+[[ OBJECT: ref 100390]]
+"type"="obj_love_03_death,"
+"sprite_index"="spr_love_03_death,"
+"x" ="0,"
+"y" ="0,"
+"depth" ="0,"
+"image_speed" ="0.25,"
+[[ OBJECT: ref 100391]]
+"type"="obj_love_03_solid,"
+"sprite_index"="spr_love_03_solid,"
+"x" ="0,"
+"y" ="0,"
+"depth" ="0,"

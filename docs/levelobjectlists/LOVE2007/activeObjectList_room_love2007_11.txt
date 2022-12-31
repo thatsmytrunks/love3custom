@@ -1,0 +1,35 @@
+[room]
+name="<3#Level 11: Amazing"
+room_name="room_love2007_11"
+room_width="400"
+room_height="400"
+[[ OBJECT: ref 104622]]
+"type"="obj_player,"
+"sprite_index"="spr_player_idle,"
+"x" ="3,"
+"y" ="107,"
+"depth" ="0,"
+[[ OBJECT: ref 104623]]
+"type"="obj_goal,"
+"sprite_index"="spr_goal,"
+"x" ="-4,"
+"y" ="187,"
+"depth" ="0,"
+"visible" ="0,"
+[[ OBJECT: ref 104624]]
+"type"="obj_2007_lv11_solid,"
+"sprite_index"="spr_2007_lv11_solid,"
+"x" ="0,"
+"y" ="0,"
+"depth" ="0,"
+[[ OBJECT: ref 104625]]
+"type"="obj_2007_lv11_death,"
+"sprite_index"="spr_2007_lv11_death,"
+"x" ="23,"
+"y" ="80,"
+"depth" ="0,"
+[[ OBJECT: ref 104626]]
+"type"="obj_restrictedview,"
+"x" ="-80,"
+"y" ="0,"
+"depth" ="-999,"

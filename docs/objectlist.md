@@ -432,6 +432,120 @@ if timer=targ
 }
 ```
 
+## Object Lists Per Level
+
+### LOVE (2014)
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_01.txt">Level 01</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_02.txt">Level 02</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_03.txt">Level 03</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_04.txt">Level 04</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_05.txt">Level 05</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_06.txt">Level 06</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_07.txt">Level 07</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_08.txt">Level 08</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_09.txt">Level 09</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_10.txt">Level 10</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_11.txt">Level 11</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_12.txt">Level 12</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_13.txt">Level 13</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_14.txt">Level 14</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_15.txt">Level 15</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_16.txt">Level 16</a><br>
+<a href="\levelobjectlists\LOVE2014\activeObjectList_room_LOVE_17.txt">Level 17</a>
+
+### LOVE 2: kuso
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k01.txt">Level 01</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k02.txt">Level 02</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k03.txt">Level 03</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k04.txt">Level 04</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k05.txt">Level 05</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k06.txt">Level 06</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k07.txt">Level 07</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k08.txt">Level 08</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k09.txt">Level 09</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k10.txt">Level 10</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k11.txt">Level 11</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k12.txt">Level 12</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k13.txt">Level 13</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k14.txt">Level 14</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k15.txt">Level 15</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k16.txt">Level 16</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k17.txt">Level 17</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k18.txt">Level 18</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k19.txt">Level 19</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k20.txt">Level 20</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k21.txt">Level 21</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k22.txt">Level 22</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k23.txt">Level 23</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k24.txt">Level 24</a></br>
+<a href="\levelobjectlists\LOVE2kuso\activeObjectList_room_k25.txt">Level 25</a>
+
+### LOVE Remastered
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_01_play.txt">Level 01</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_02_play.txt">Level 02</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_03_play.txt">Level 03</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_04_play.txt">Level 04</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_05_play.txt">Level 05</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_06_play.txt">Level 06</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_07_play.txt">Level 07</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_08_play.txt">Level 08</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_09_play.txt">Level 09</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_10_play.txt">Level 10</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_11_play.txt">Level 11</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_12_play.txt">Level 12</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_13_play.txt">Level 13</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_14_play.txt">Level 14</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_15_play.txt">Level 15</a><br>
+<a href="\levelobjectlists\LOVERemastered\activeObjectList_room_love_16_play.txt">Level 16</a>
+
+### LOVE 3
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv1.txt">Level 01</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv2.txt">Level 02</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv3.txt">Level 03</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv4.txt">Level 04</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv5.txt">Level 05</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv6.txt">Level 06</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv7.txt">Level 07</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv8.txt">Level 08</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv9.txt">Level 09</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv10.txt">Level 10</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv11.txt">Level 11</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv12.txt">Level 12</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv13.txt">Level 13</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv14.txt">Level 14</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv15.txt">Level 15</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv16.txt">Level 16</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv17.txt">Level 17</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv18.txt">Level 18</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv19.txt">Level 19</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv20.txt">Level 20</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv21.txt">Level 21</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv22.txt">Level 22</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv23.txt">Level 23</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv24.txt">Level 24</a><br>
+<a href="\levelobjectlists\LOVE3\activeObjectList_room_lv25.txt">Level 25</a>
+
+### <3
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_01.txt">Level 01</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_02.txt">Level 02</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_03.txt">Level 03</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_04.txt">Level 04</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_05.txt">Level 05</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_06.txt">Level 06</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_07.txt">Level 07</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_08.txt">Level 08</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_09.txt">Level 09</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_10.txt">Level 10</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_11.txt">Level 11</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_12.txt">Level 12</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_13.txt">Level 13</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_14.txt">Level 14</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_15.txt">Level 15</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_16.txt">Level 16</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_17.txt">Level 17</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_18.txt">Level 18</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_19.txt">Level 19</a><br>
+<a href="\levelobjectlists\LOVE2007\activeObjectList_room_love2007_20.txt">Level 20</a>
 
 ## Full List of Objects
 
