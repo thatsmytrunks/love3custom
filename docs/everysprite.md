@@ -7,38 +7,22 @@ Here are previews of all the sprites in the game:
 <div id="sprite-container"></div>
 
 <style>
-#sprite-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-}
-
-.sprite-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 10px;
-  text-align: center;
-}
-
-.sprite-item img {
-  max-width: 100px;
-  max-height: 100px;
-}
+  /* ... CSS styles ... */
 </style>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const spriteContainer = document.getElementById('sprite-container');
   const repoUrl = 'https://api.github.com/repos/thatsmytrunks/love3custom/contents/docs/images/everySprite';
+  const proxyUrl = 'https://cors-anywhere.herokuapp.com/'; // Example proxy server
 
-  fetch(repoUrl)
+  fetch(proxyUrl + repoUrl) // Use the proxy server for the API request
     .then(response => response.json())
     .then(data => {
       data.forEach(file => {
         if (file.type === 'file' && file.name.endsWith('_0.png')) {
           const spriteName = file.name.replace('_0.png', '');
-          const imageUrl = file.download_url;
+          const imageUrl = file.download_url.replace('https://raw.githubusercontent.com/', 'https://thatsmytrunks.github.io/love3custom/'); // Adjust image path
 
           const spriteItem = document.createElement('div');
           spriteItem.className = 'sprite-item';
