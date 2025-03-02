@@ -2,7 +2,7 @@
 
 # Every Sprite
 
-Here are previews of all the sprites in the game:
+[img](https://raw.githubusercontent.com/thatsmytrunks/love3custom/main/docs/images/everySprite/achTrigger_spr_0.png)
 
 <div id="sprite-container"></div>
 
