@@ -1,8 +1,8 @@
 [Return to Home](README.md)
 
-# Every Sprite
+# Every Sprite 531
 
-[img](https://raw.githubusercontent.com/thatsmytrunks/love3custom/main/docs/images/everySprite/achTrigger_spr_0.png)
+[image](https://raw.githubusercontent.com/thatsmytrunks/love3custom/main/docs/images/everySprite/achTrigger_spr_0.png)
 
 <div id="sprite-container"></div>
 
