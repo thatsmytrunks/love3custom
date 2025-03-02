@@ -1,21 +1,61 @@
 [Return to Home](README.md)
 
-# Every Sprite in the Game
-This is an incredibly stupid way of doing this, but it was the quickest way. On the following six pages, each with 2030+ images, you can see every frame of every sprite in the game. There's no particularly good way to use this list, but here's how the files are named.
-___
-![spr_lv23_activated_14.png](images/everySprite/spr_lv23_activated_14.png)<br>spr_lv23_activated_14.png<br>
-___
-`spr_lv23_activated_14.png`
+# Every Sprite
 
-This is the filename that exported when I dumped every sprite in the game with UndertaleModTool.
+Here are previews of all the sprites in the game:
 
-**spr_lv23_activated**_14.png
+<div id="sprite-container"></div>
 
-The bolded part refers to the sprite name in the game. When setting a `sprite_index` in your custom level, use the string `"spr_lv23_activated"`.
+<style>
+#sprite-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
 
-spr_lv23_activated_**14**.png
+.sprite-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  text-align: center;
+}
 
-This part refers to the frame of animation. You can set this in your custom level using the `image_index` variable.
+.sprite-item img {
+  max-width: 100px;
+  max-height: 100px;
+}
+</style>
 
-Every Sprite Pages:
-< [1](everysprite1.md) | [2](everysprite2.md) | [3](everysprite3.md) | [4](everysprite4.md) | [5](everysprite5.md) | [6](everysprite6.md) >
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const spriteContainer = document.getElementById('sprite-container');
+  const repoUrl = 'https://api.github.com/repos/thatsmytrunks/love3custom/contents/docs/images/everySprite';
+
+  fetch(repoUrl)
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(file => {
+        if (file.type === 'file' && file.name.endsWith('_0.png')) {
+          const spriteName = file.name.replace('_0.png', '');
+          const imageUrl = file.download_url;
+
+          const spriteItem = document.createElement('div');
+          spriteItem.className = 'sprite-item';
+
+          const image = document.createElement('img');
+          image.src = imageUrl;
+          image.alt = spriteName;
+
+          const name = document.createElement('p');
+          name.textContent = spriteName;
+
+          spriteItem.appendChild(image);
+          spriteItem.appendChild(name);
+          spriteContainer.appendChild(spriteItem);
+        }
+      });
+    })
+    .catch(error => console.error('Error fetching sprite data:', error));
+});
+</script>
