@@ -2,7 +2,7 @@
 
 # Every Sprite
 
-Here are previews of all the sprites in the game: 888
+Here are previews of all the sprites in the game:
 
 <div id="sprite-container"></div>
 
@@ -30,7 +30,7 @@ Here are previews of all the sprites in the game: 888
 <script>
 document.addEventListener('DOMContentLoaded', function() {
   const spriteContainer = document.getElementById('sprite-container');
-  const repoUrl = "https://api.github.com/repos/thatsmytrunks/love3custom/contents/docs/images/everySprite";
+  const repoUrl = 'https://api.github.com/repos/thatsmytrunks/love3custom/contents/docs/images/everySprite';
 
   fetch(repoUrl)
     .then(response => response.json())
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
       data.forEach(file => {
         if (file.type === 'file' && file.name.endsWith('_0.png')) {
           const spriteName = file.name.replace('_0.png', '');
-          const imageUrl = file.download_url;
+          const imageUrl = file.download_url; // Use the download_url directly
 
           const spriteItem = document.createElement('div');
           spriteItem.className = 'sprite-item';
