@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sprite Preview</title>
+</head>
+<body>
+
+<div id="sprite-container"></div>
+
+<script>
+  const spriteContainer = document.getElementById('sprite-container');
+  const repoUrl = 'https://api.github.com/repos/thatsmytrunks/love3custom/contents/docs/images/everySprite';
+
+  fetch(repoUrl)
+    .then(response => response.json())
+    .then(data => {
+      data.forEach(file => {
+        if (file.type === 'file' && file.name.endsWith('_0.png')) {
+          const spriteName = file.name.replace('_0.png', '');
+          const imageUrl = file.download_url;
+
+          const image = document.createElement('img');
+          image.src = imageUrl;
+          image.alt = spriteName;
+
+          const name = document.createElement('p');
+          name.textContent = spriteName;
+
+          spriteContainer.appendChild(image);
+          spriteContainer.appendChild(name);
+        }
+      });
+    })
+    .catch(error => console.error('Error fetching sprites:', error));
+</script>
+
+</body>
+</html>
