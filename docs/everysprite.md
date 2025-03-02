@@ -1,8 +1,8 @@
 [Return to Home](README.md)
 
-# Every Sprite 531
+# Every Sprite
 
-[image](https://raw.githubusercontent.com/thatsmytrunks/love3custom/main/docs/images/everySprite/achTrigger_spr_0.png)
+Here are previews of all the sprites in the game:
 
 <div id="sprite-container"></div>
 
@@ -28,7 +28,7 @@
 </style>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
+window.onload = function() { // Ensure the script runs after the page loads
   const spriteContainer = document.getElementById('sprite-container');
   const repoUrl = 'https://api.github.com/repos/thatsmytrunks/love3custom/contents/docs/images/everySprite';
 
@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
       data.forEach(file => {
         if (file.type === 'file' && file.name.endsWith('_0.png')) {
           const spriteName = file.name.replace('_0.png', '');
-          const imageUrl = file.download_url; // Use the download_url directly
+          const imageUrl = file.download_url;
 
           const spriteItem = document.createElement('div');
           spriteItem.className = 'sprite-item';
@@ -57,5 +57,5 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     })
     .catch(error => console.error('Error fetching sprite data:', error));
-});
+};
 </script>
